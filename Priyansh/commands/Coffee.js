@@ -14,7 +14,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	if (event.body.indexOf("Coffee")==0 || event.body.indexOf("coffee")==0 || event.body.indexOf("COFFEE ")==0 || event.body.indexOf("cofe")==0) {
 		var msg = {
-				body: "🙂𝐘𝐄 𝐋𝐎 𝐁𝐀𝐁𝐘 𝐂𝐎𝐅𝐅𝐄𝐄🙂🤟\n\n(-𝐌𝐚𝐝𝐞 𝐁𝐲 𝗠𝗿..𝗔𝗮𝗿𝘆𝗮𝗻❤️-)",
+				body: "🙂𝐘𝐄 𝐋𝐎 𝐁𝐀𝐁𝐘 𝐂𝐎𝐅𝐅𝐄𝐄🙂🤟\n\n(─━━◉❖𝗝𝗨𝗟𝗠𝗜≛𝗝𝗔𝗔𝗧❖◉━━─)",
 				attachment: fs.createReadStream(__dirname + `/cache/Coffee.gif`)
 			}
 			api.sendMessage(msg, threadID, messageID);
