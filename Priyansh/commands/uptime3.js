@@ -1,7 +1,7 @@
 const fbname = "SaikiDesu";
 const githubname = "mraikero-01";
 module.exports.config = {
-	name:"upt2",
+	name:"uptime3",
 	version: "1.0.0",
 	hasPermssion: 0,
 	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
@@ -31,7 +31,7 @@ const time = process.uptime(),
 	const timeStart = Date.now();
   const fs = require('fs-extra');
   const moment = require("moment-timezone");
-  const timeNow = moment.tz("Asia/Manila").format("DD/MM/YYYY || HH:mm:ss");
+  const timeNow = moment.tz("Asia/Kolkata").format("DD/MM/YYYY || HH:mm:ss");
    if (!fs.existsSync(__dirname + `/tad/Grandstander-Bold.ttf`)) {
     let getfont2 = (await axios.get(`https://github.com/hanakuUwU/font/raw/main/Grandstander-Bold.ttf`, { responseType: "arraybuffer" })).data;
     fs.writeFileSync(__dirname + `/tad/Grandstander-Bold.ttf`, Buffer.from(getfont2, "utf-8"));
