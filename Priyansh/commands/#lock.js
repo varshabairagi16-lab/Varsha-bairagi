@@ -1,5 +1,5 @@
 const fs = require("fs"),
-  path = __dirname + "/aaryan/aaryan.json";
+  path = __dirname + "/Julmi/Julmi.json";
 
 module.exports.config = {
 name: "lock",
