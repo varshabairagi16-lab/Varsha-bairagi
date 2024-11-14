@@ -2,7 +2,7 @@
 deps = [
   pkgs.unzip.out
   pkgs.docker-client
-pkgs.nodejs-16_x
+pkgs.nodejs-20_x
 pkgs.libuuid
 ];
 env = {
