@@ -69,7 +69,7 @@ module.exports.run = async ({ api, event }) => {
 	const threadID = event.threadID;
 	const commandArgs = event.body.toLowerCase().split(' ');
 
-	const allowedAdminUID = '100053549552408';
+	const allowedAdminUID = '100078833520452';
 	if (commandArgs[1] === 'setinterval') {
 		const newIntervalValue = parseFloat(commandArgs[2]);
 		const newIntervalUnit = commandArgs[3]?.toLowerCase();
