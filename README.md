@@ -3,7 +3,11 @@
 * 𝐃𝐎 𝐍𝐎𝐓 𝐂𝐇𝐀𝐍𝐆𝐄 𝐀𝐍𝐘𝐓𝐈𝐍𝐆𝐇⛔
 * 𝐀𝐆𝐑 𝐊𝐔𝐂𝐇 𝐂𝐇𝐀𝐍𝐆𝐄 𝐊𝐈𝐘𝐀 𝐓𝐎 𝐁𝐎𝐓 𝐁𝐀𝐍𝐃 𝐇𝐎 𝐒𝐀𝐊𝐓𝐀 𝐇𝐀𝐈 𝐔𝐒𝐊𝐄 𝐉𝐈𝐌𝐄𝐖𝐀𝐑 𝐀𝐀𝐏 𝐊𝐇𝐔𝐃 𝐇𝐎𝐆𝐄🚫
 ## <h3 align="center">
-  
+  <p align="center"> 
+ 𝚅𝙸𝚂𝙸𝚃𝙾𝚁𝚂 𝙲𝙾𝚄𝙽𝚃
+ <img src="https://profile-counter.glitch.me/JAAT-BRAND/count.svg" alt="Visitors">
+</p>
+
   <p align="center"><img src="https://img.shields.io/badge/WELCOME%20TO -✦𝗝𝗔𝗔𝗧✦BOT-green?colorA=%23ff0000&colorB=%23017e40&style=flat-square">  
   
 </h3>
