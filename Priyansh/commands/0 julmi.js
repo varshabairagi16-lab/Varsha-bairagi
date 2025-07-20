@@ -21,7 +21,7 @@ module.exports.run = async function({ api, event }) {
         + `🌸 𝙋𝙍𝙀𝙁𝙄𝙓 🌸 »» ${global.config.PREFIX} ««\n\n`
         + `🥳 𝙐𝙋𝙏𝙄𝙈𝙀 🥳\n`
         + `📅 𝘿𝘼𝙏𝙀 & 𝙏𝙄𝙈𝙀: ${currentTime}\n`
-        + `⚡ 𝘽𝙊𝙏 𝙄𝙎 𝙍𝙐𝙉𝙉𝙄𝙉𝙂 ⚡\n`
+        + `⚡ 𝘽𝙊𝙏 𝙄𝙎 𝙍U𝙉𝙉𝙄𝙉𝙂 ⚡\n`
         + `🕛 ${hours}h ${minutes}m ${seconds}s 🕧`;
 
     return api.sendMessage(botInfo, event.threadID, event.messageID);
