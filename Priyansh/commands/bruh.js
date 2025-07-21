@@ -1,11 +1,11 @@
 module.exports.config = {
-  name: "pooja",
+  name: "nasta",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
   description: "Random ảnh ayaka",
   commandCategory: "Random-IMG",
-  usages: "pooja",
+  usages: "nasta",
   cooldowns: 5,
   dependencies: {
     "request":"",
@@ -20,7 +20,7 @@ const axios = global.nodemodule["axios"];
 const request = global.nodemodule["request"];
 const fs = global.nodemodule["fs-extra"];
   var link = [
-  "https://i.imgur.com/6iiwTNP.jpeg",
+  "https://i.imgur.com/xKXWk1A.jpeg",
   ];
   var max = Math.floor(Math.random() * 6);  
 var min = Math.floor(Math.random() * 2);
