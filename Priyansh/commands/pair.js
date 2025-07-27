@@ -1,51 +1,105 @@
 module.exports.config = {
   name: "pair",
-  version: "1.0.0", 
+  version: "1.0.0",
   hasPermssion: 0,
-  credits: "PREM BABU",
-  description: "0Pairing",
-  commandCategory: "Love", 
-  usages: "pair", 
-  cooldowns: 0
+  credits: "Rudra X Priyansh",
+  description: "Ye jodi likhi hai bhagwan ne - Kalm tha Rudra 👑",
+  commandCategory: "love",
+  cooldowns: 2,
+  dependencies: {
+    "axios": "",
+    "fs-extra": "",
+    "canvas": ""
+  }
 };
-module.exports.run = async function({ api, event, args, Users, Threads, Currencies }) {
-        const axios = global.nodemodule["axios"];
-        const fs = global.nodemodule["fs-extra"];
-        // var data = await Currencies.getData(event.senderID);
-        var money = data.money
-        if(money < 1) api.sendMessage("You need 500 USD for 1 pairing, please use ${global.config.PREFIX}work to received money or ask for admin bot!\n🤑Theres something new to eat🤑",event.threadID,event.messageID)
-        else {
-         var tl = ['21%', '67%', '19%', '37%', '17%', '96%', '52%', '62%', '76%', '83%', '100%', '99%', "0%", "48%"];
-        var tle = tl[Math.floor(Math.random() * tl.length)];
-        let dataa = await api.getUserInfo(event.senderID);
-        let namee = await dataa[event.senderID].name
-        let loz = await api.getThreadInfo(event.threadID);
-        var emoji = loz.participantIDs;
-        var id = emoji[Math.floor(Math.random() * emoji.length)];
-        let data = await api.getUserInfo(id);
-        let name = await data[id].name
-        var arraytag = [];
-                arraytag.push({id: event.senderID, tag: namee});
-                arraytag.push({id: id, tag: name});
-        // api.changeNickname(`😘👉🔐🔐 ${name} Property 🔐🔐👈😘`, event.threadID, event.senderID);
-        // api.changeNickname(`😘👉🔐🔐 ${namee} Property🔐🔐👈😘`, event.threadID, id);
-        var sex = await data[id].gender;
-        var gender = sex == 2 ? "Male🧑" : sex == 1 ? "Female👩‍🦰" : "Trần Đức Bo";
-        // Currencies.setData(event.senderID, options = {money: money - 500})
-        let Avatar = (await axios.get( `https://graph.facebook.com/${id}/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: "arraybuffer" } )).data;
-            fs.writeFileSync( __dirname + "/cache/avt.png", Buffer.from(Avatar, "utf-8") );
 
-          let gifLove = (await axios.get( `https://i.imgur.com/MBETCWy.gif`, { responseType: "arraybuffer" } )).data; 
-              fs.writeFileSync( __dirname + "/cache/giflove.png", Buffer.from(gifLove, "utf-8") );
-          
-        let Avatar2 = (await axios.get( `https://graph.facebook.com/${event.senderID}/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: "arraybuffer" } )).data;
-            fs.writeFileSync( __dirname + "/cache/avt2.png", Buffer.from(Avatar2, "utf-8") );
-        var imglove = [];
-              imglove.push(fs.createReadStream(__dirname + "/cache/avt.png"));
-              imglove.push(fs.createReadStream(__dirname + "/cache/giflove.png"));
-              imglove.push(fs.createReadStream(__dirname + "/cache/avt2.png"));
-        var msg = {body:`─━━🄹🅄🄻🄼🄸≛🄹🄰🄰🅃━━─\nलो मिल गया आपका जीवन साथी🤭🫶\nअब बार-बार मत बोलना सेटिंग👩‍❤️‍💋‍👨👫\n करवाने को 😕🥲\nआप दोनो का प्यार👉${tle} है। 😮😐\n`+namee+" "+"💖"+" "+name, mentions: arraytag, attachment: imglove}
-        // var msg = {body: `🥰Successful pairing!\n💌Wish you two hundred years of happiness\n💕Double ratio: ${tle}%\n`+namee+" "+"💓"+" "+name, mentions: arraytag, attachment: imglove}  
-         return api.sendMessage(msg, event.threadID, event.messageID)
-      }
-}
+module.exports.run = async function ({ Users, Threads, api, event }) {
+  const fs = require("fs-extra");
+  const axios = require("axios");
+  const { createCanvas, loadImage } = require("canvas");
+
+  const path = __dirname + `/cache`;
+  const id1 = event.senderID;
+  const name1 = await Users.getNameUser(id1);
+  const threadInfo = await api.getThreadInfo(event.threadID);
+  const all = threadInfo.userInfo;
+  const botID = api.getCurrentUserID();
+  const gender1 = all.find(u => u.id == id1)?.gender || "UNKNOWN";
+
+  let candidates = [];
+  for (const u of all) {
+    if (u.id !== id1 && u.id !== botID) {
+      if (gender1 === "MALE" && u.gender === "FEMALE") candidates.push(u.id);
+      else if (gender1 === "FEMALE" && u.gender === "MALE") candidates.push(u.id);
+      else if (gender1 === "UNKNOWN") candidates.push(u.id);
+    }
+  }
+
+  if (candidates.length === 0) return api.sendMessage("❌ Koi jodi nahi mili bhai 😔", event.threadID);
+
+  const id2 = candidates[Math.floor(Math.random() * candidates.length)];
+  const name2 = await Users.getNameUser(id2);
+
+  // 💫 raj xwd elements
+  const backgrounds = [
+    "https://i.postimg.cc/wjJ29HRB/background1.png",
+    "https://i.postimg.cc/zf4Pnshv/background2.png",
+    "https://i.postimg.cc/5tXRQ46D/background3.png"
+  ];
+  const shayaris = [
+    "💫 Mohabbat inki taqdeer ban chuki hai 💖",
+    "💘 In dono ki jodi pe rab bhi fakr kare 🙏",
+    "🌟 Ishq bhi sharma jaaye inke aage 😍",
+    "👑 Dil se dil ka milna yeh toh asmaanon ka rishta hai 🕊️",
+    "🔥 Ruh ka milan hai yeh, sirf jism ka nahi 💑",
+    "🌸 Inka rishta toh janmon ka hai 💍",
+    "💌 Pyaar bhi keh raha hai: 'Yeh dono ek doosre ke liye bane hain' 🌈",
+    "💎 Jahan tak mohabbat ka asar hai, wahan tak inka naam chalega 💥",
+    "🫀 Dil, dua aur kismat — sab milein hain in dono ke naam 💘"
+  ];
+  const ratings = ["💘 100%", "💫 99.9%", "🔥 98%", "❤️ 101%", "🌟 97.5%", "👑 96.69%", "🕊️ 100.0%"];
+
+  const header = "✨ Ye jodi likhi hai god ne ✨\n💢 Kalm tha... Raj xwd 👑";
+  const bg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+  const shayari = shayaris[Math.floor(Math.random() * shayaris.length)];
+  const rating = ratings[Math.floor(Math.random() * ratings.length)];
+
+  const pathImg = `${path}/pairbg.png`;
+  const pathAvt1 = `${path}/avt1.png`;
+  const pathAvt2 = `${path}/avt2.png`;
+
+  // 📥 Get profile pics and background
+  const avt1 = (await axios.get(`https://graph.facebook.com/${id1}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: "arraybuffer" })).data;
+  fs.writeFileSync(pathAvt1, Buffer.from(avt1, "utf-8"));
+
+  const avt2 = (await axios.get(`https://graph.facebook.com/${id2}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: "arraybuffer" })).data;
+  fs.writeFileSync(pathAvt2, Buffer.from(avt2, "utf-8"));
+
+  const bgImage = (await axios.get(bg, { responseType: "arraybuffer" })).data;
+  fs.writeFileSync(pathImg, Buffer.from(bgImage, "utf-8"));
+
+  // 🖼️ Create final image
+  const baseImg = await loadImage(pathImg);
+  const avatar1 = await loadImage(pathAvt1);
+  const avatar2 = await loadImage(pathAvt2);
+  const canvas = createCanvas(baseImg.width, baseImg.height);
+  const ctx = canvas.getContext("2d");
+
+  ctx.drawImage(baseImg, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(avatar1, 100, 150, 300, 300); // position 1
+  ctx.drawImage(avatar2, 900, 150, 300, 300); // position 2
+
+  const finalBuffer = canvas.toBuffer();
+  fs.writeFileSync(pathImg, finalBuffer);
+
+  // 🧹 Cleanup
+  fs.removeSync(pathAvt1);
+  fs.removeSync(pathAvt2);
+
+  // 📨 Send message
+  return api.sendMessage({
+    body: `${header}\n━━━━━━━━━━━━━━\n💑 ${name1} ❤️ ${name2}\n${shayari}\n❤️ Compatibility: ${rating}\n━━━━━━━━━━━━━━\n🔱 Powered by Raj xwd `,
+    mentions: [{ tag: name2, id: id2 }],
+    attachment: fs.createReadStream(pathImg)
+  }, event.threadID, () => fs.unlinkSync(pathImg), event.messageID);
+};
