@@ -1,6 +1,6 @@
 /** I am doing this coding with a lot of difficulty, please don't post it yourself¯\_(ツ)_/¯ **/
 module.exports.config = {
-  name: "sadvideo",
+  name: "hasivideo",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "Ariyan",
@@ -22,16 +22,13 @@ const fs = global.nodemodule["fs-extra"];
    var hi = ["─━◉❖RAJ THAKUR ≛RAJ XD❖◉━─"];
   var know = hi[Math.floor(Math.random() * hi.length)];
   var link = [
-  "https://drive.google.com/uc?id=1XdEXMLrU8JwYFvbaQoMQHJmwoWL1_Dig",
-    "https://drive.google.com/uc?id=1XHeGi9evbPc7feHd_ZEdBFsAv24uG7Fb",
-    "https://drive.google.com/uc?id=1XKFx79hyaXe0txe75DMMBPOqqKFCKN3",
-    "https://drive.google.com/uc?id=1XAe-R-jKFXcaEU8sr9BF0dMPCJEFlBiQ",
-    "https://drive.google.com/uc?id=1XcYr568sImaE__20X_un3NHxnJEwWfrL",
-    "https://drive.google.com/uc?id=1X9N3gjPDiutDP1wHHNFu85F33JmzUBC_",
-    "https://drive.google.com/uc?id=1XInpM6JXOvl-yUiSbKs47ZHp5_KvTsKo",
-    "https://drive.google.com/uc?id=1X9rHTos8DH-KXZJDtF2wCkibKYWY3L1g",
-    "https://drive.google.com/uc?id=1X6Ui8VWseukemFxExr5mwbFDcA-w18yu",
-    "https://drive.google.com/uc?id=1XKFx79hyaXe0txe75DMMBPOqqKFCKN3",
+  "https://i.imgur.com/OHTcAGv.mp4",
+        "https://i.imgur.com/QCsxN6h.mp4",
+        "https://i.imgur.com/CM6uGry.mp4",
+        "https://i.imgur.com/RDji9aR.mp4",
+        "https://i.imgur.com/7CaCDQX.mp4",
+        "https://i.imgur.com/iusgHyQ.mp4",
+        "https://i.imgur.com/isBR9V8.mp4"
 ];
      var callback = () => api.sendMessage({body:`「 ${know} 」`,attachment: fs.createReadStream(__dirname + "/cache/15.mp4")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/15.mp4"));    
       return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/15.mp4")).on("close",() => callback());
