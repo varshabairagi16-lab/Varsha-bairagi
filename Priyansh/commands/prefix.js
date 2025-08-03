@@ -25,10 +25,10 @@ module.exports.handleEvent = async ({ event, api, Threads }) => {
     if (body === i.toUpperCase() | body === i | str === body) {
 const prefix = threadSetting.PREFIX || global.config.PREFIX;
       if (data.PREFIX == null) {
-        return out(`This Is My Prefix ⇉ [ ${prefix} ]\n💝🥀༻𝐎𝐖𝐍𝐄𝐑:- ☞𝗝𝗨𝗟𝗠𝗜 𝗝𝗔𝗔𝗧☜ ༺ ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠𝗝𝗨𝗟𝗠𝗜〠.༒ ༒𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝༒:- ☞ https://www.facebook.com/julmijaat1008?mibextid=ZbWKwL☜\n
-👋For Any Kind Of Help Contact On Telegram  Username 👉 @julmi_jaat😇`)
+        return out(`This Is My Prefix ⇉ [ ${prefix} ]\n💝🥀༻𝐎𝐖𝐍𝐄𝐑:- ☞𝐑𝐀𝐉 𝐗𝐖𝐃☜ ༺ ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠𝐑𝐀𝐉〠.༒ ༒𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝༒:- ☞ https://www.facebook.com/julmijaat1008?mibextid=ZbWKwL☜\n
+👋For Any Kind Of Help Contact On Telegram  Username 👉 @raj_xwd😇`)
       }
-      else return out('️️️️️️️️️️️️️️️️️️️️️️️️️️️This Is My Prefix ⇉ [ ${prefix} ]  \n💝🥀༻𝐎𝐖𝐍𝐄𝐑:- ☞𝗝𝗨𝗟𝗠𝗜 𝗝𝗔𝗔𝗧☜ ༺ ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠𝗝𝗨𝗟𝗠𝗜〠.༒ ༒𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝༒:- ☞ https://www.facebook.com/julmijaat1008?mibextid=ZbWKwL☜\n👋For Any Kind Of Help Contact On Instagram 👇👇https://instagram.com/_julmi_jaat__?igshid=OGQ5ZDc2ODk2ZA==😇' + data.PREFIX)
+      else return out('️️️️️️️️️️️️️️️️️️️️️️️️️️️This Is My Prefix ⇉ [ ${prefix} ]  \n💝🥀༻𝐎𝐖𝐍𝐄𝐑:- ☞𝐑𝐀𝐌 𝐑𝐀𝐉 𝐗𝐖𝐃 ☜ ༺ ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠𝐑𝐀𝐉〠.༒ ༒𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝༒:- ☞https://www.facebook.com/afzal.chishti.792☜\n👋For Any Kind Of Help Contact On Instagram 👇👇rajxwd4444==😇' + data.PREFIX)
     }
 
   });
